@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Knock</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% if session[:last_item_id] %>
+    <div>
+      <p>
+      <%= Product.find_by_id(session[:last_item_id]).name %>,   $<%= Product.find_by_id(session[:last_item_id]).price %></p>
+    </div>
+  <% end %>
+  <p><%= notice %></p>
+
+  <%= yield %>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
